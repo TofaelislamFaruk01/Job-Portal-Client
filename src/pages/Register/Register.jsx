@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import registerLottieData from '../../assets/Lottie/register.json'
 
 import AuthContext from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -98,6 +99,9 @@ const Register = () => {
                             )}
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Register</button>
+          
+          <p>Already have an account.<Link to={"/signIn"} className='text-blue-600 font-semibold link link-hover'> Log In</Link></p>
+
           {errorMessage.firebase && (
                                 <p className="text-red-500 text-sm mt-4">{errorMessage.firebase}</p>
                             )}

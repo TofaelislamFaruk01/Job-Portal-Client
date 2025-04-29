@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import auth from "../firebase/firebase.init";
 
 
@@ -14,11 +14,11 @@ const AuthProvider = ({children}) => {
 
       const unSubscribe=  onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser);
-            console.log("sate now" , currentUser);
+            console.log("state now" , currentUser);
             setLoading(false);
         })
 
-        return unSubscribe();
+        return unSubscribe;
 
     },[])
 
@@ -27,12 +27,24 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword(auth,email,password);
     }
 
+    const signInUser =(email,password)=>{
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const signOutUser = ()=>{
+
+        signOut(auth);
+    }
+
 
 
     const authInfo = {
         user,
         loading,
         createUser,
+        signInUser,
+        signOutUser,
 
     }
 
