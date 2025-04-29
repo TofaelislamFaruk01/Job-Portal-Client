@@ -4,6 +4,7 @@ import registerLottieData from '../../assets/Lottie/register.json'
 
 import AuthContext from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import SocialLogIn from '../Shared/SocialLogIn';
 
 const Register = () => {
 
@@ -92,21 +93,22 @@ const Register = () => {
           {errorMessage.email && (
                                 <p className="text-red-500 text-sm mt-1">{errorMessage.email}</p>
                             )}
-          <label className="label">Password</label>
+          <label className="label">Create Password</label>
           <input type="password" className="input" placeholder="Password" name="password" />
           {errorMessage.password && (
                                 <p className="text-red-500 text-sm mt-1">{errorMessage.password}</p>
                             )}
-          <div><a className="link link-hover">Forgot password?</a></div>
+          {/* <div><a className="link link-hover">Forgot password?</a></div> */}
           <button className="btn btn-neutral mt-4">Register</button>
           
-          <p>Already have an account.<Link to={"/signIn"} className='text-blue-600 font-semibold link link-hover'> Log In</Link></p>
+          <p className='mt-2'>Already have an account.<Link to={"/signIn"} className='text-blue-600 font-semibold link link-hover'> Log In</Link></p>
 
           {errorMessage.firebase && (
                                 <p className="text-red-500 text-sm mt-4">{errorMessage.firebase}</p>
                             )}
         </fieldset>
       </form>
+      <SocialLogIn/>
     </div>
   </div>
 </div>

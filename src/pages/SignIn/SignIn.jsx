@@ -4,6 +4,7 @@ import Lottie from 'lottie-react';
 import SignInLottieData from '../../assets/Lottie/SignIn.json'
 import AuthContext from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
+import SocialLogIn from '../Shared/SocialLogIn';
 
 
 const SignIn = () => {
@@ -99,12 +100,13 @@ const SignIn = () => {
                                   )}
                 <div><a className="link link-hover">Forgot password?</a></div>
                 <button className="btn btn-neutral mt-4">Log In</button>
-                <p>Don't have an account? Create an account. Please <Link to={"/register"} className='text-blue-600 font-semibold link link-hover'> Register</Link></p>
+                <p className='mt-2'>Don't have an account? Create an account. Please <Link to={"/register"} className='text-blue-600 font-semibold link link-hover'> Register</Link></p>
                 {errorMessage.firebase && (
                                       <p className="text-red-500 text-sm mt-4">{errorMessage.firebase}</p>
                                   )}
               </fieldset>
             </form>
+            <SocialLogIn/>
           </div>
         </div>
       </div>
