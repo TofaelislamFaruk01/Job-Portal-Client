@@ -1,10 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { MdLocationOn, MdOutlineWork, MdEmail, MdOutlineCalendarToday } from 'react-icons/md';
 import { FaMoneyBillWave, FaUserTie } from 'react-icons/fa';
 
 const JobDetails = () => {
     const {
+        _id,
         title,
         location,
         jobType,
@@ -84,7 +85,7 @@ const JobDetails = () => {
                     </div>
 
                     <div className="card-actions justify-end mt-4">
-                        <button className="btn btn-primary">Apply Now</button>
+                     <Link to={`/jobApply/${_id}`}><button className="btn btn-primary">Apply Now</button></Link>
                     </div>
                 </div>
             </div>

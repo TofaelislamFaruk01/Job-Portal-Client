@@ -3,13 +3,17 @@ import Lottie from 'lottie-react';
 
 import SignInLottieData from '../../assets/Lottie/SignIn.json'
 import AuthContext from '../../context/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogIn from '../Shared/SocialLogIn';
 
 
 const SignIn = () => {
 
-    const {user,signInUser} = useContext(AuthContext);
+    const {signInUser} = useContext(AuthContext);
+    const location = useLocation();
+    console.log(location);
+    const Navigate= useNavigate();
+    const from = location.state || '/';
 
      const [errorMessage, setErrorMessage] = useState({
             email: '',
@@ -52,6 +56,7 @@ const SignIn = () => {
                // setUser(currentUser);
                 console.log("sign in user = ",currentUser);
                 form.reset();
+                Navigate(from);
                 
             })
             .catch((error)=>{
