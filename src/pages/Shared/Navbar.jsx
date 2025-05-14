@@ -24,7 +24,7 @@ const Navbar = () => {
 
     const links = <>
     <li><NavLink to={"/"}>Home</NavLink></li>
-    <li><NavLink to={"/"}>Home</NavLink></li>
+    <li><NavLink to={"/myApplications"}>My Applications</NavLink></li>
     <li><NavLink to={"/"}>Home</NavLink></li>
       
       <li><a>Item 3</a></li>
@@ -44,7 +44,7 @@ const Navbar = () => {
       </ul>
     </div>
     
-    <a className="btn btn-ghost text-xl">
+    <a className="btn btn-ghost  text-xl">
     <img className='w-12' src={jobsLogo} alt="" srcset="" />
     <h3 className='text-3xl'>Job Portal</h3>
       </a>
