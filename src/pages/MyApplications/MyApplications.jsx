@@ -12,25 +12,28 @@ const MyApplications = () => {
             .then(data => setJobs(data));
     }, [user?.email]);
 
-    const handleDelete = (id) => {
-        fetch(`http://localhost:3000/job-applications/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => {
-                if (res.ok) {
-                    setJobs(jobs.filter(job => job._id !== id));
-                }
-            });
-    };
+    // const handleDelete = (id) => {
+    //     fetch(`http://localhost:3000/job-applications/${id}`, {
+    //         method: 'DELETE',
+    //     })
+    //         .then(res => {
+    //             if (res.ok) {
+    //                 setJobs(jobs.filter(job => job._id !== id));
+    //             }
+    //         });
+    // };
 
     return (
-        <div className="p-4">
+        <div className="p-4 mt-5">
             <h2 className="text-2xl font-semibold mb-4">
-                Applications for {user.email}: {jobs.length}
+                 {user.email}
+            </h2>
+            <h2 className="text-2xl font-semibold mb-5">
+                Applied Applications : {jobs.length}
             </h2>
 
             <div className="overflow-x-auto">
-                <table className="min-w-full border border-gray-300">
+                <table className="min-w-full border border-gray-300 mt-8 mb-15">
                     <thead className="bg-gray-100">
                         <tr>
                             <th className="px-4 py-2 border">Logo</th>
@@ -39,7 +42,7 @@ const MyApplications = () => {
                             <th className="px-4 py-2 border">GitHub</th>
                             <th className="px-4 py-2 border">LinkedIn</th>
                             <th className="px-4 py-2 border">Resume</th>
-                            <th className="px-4 py-2 border">×</th>
+                            {/* <th className="px-4 py-2 border">×</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +66,7 @@ const MyApplications = () => {
                                 <td className="px-4 py-2 border">
                                     <a href={job.resume} target="_blank" rel="noreferrer" className="text-blue-600 underline">Resume</a>
                                 </td>
-                                <td className="px-4 py-2 border">
+                                {/* <td className="px-4 py-2 border">
                                     <button
                                         onClick={() => handleDelete(job._id)}
                                         className="text-red-600 text-xl hover:text-red-800"
@@ -71,7 +74,7 @@ const MyApplications = () => {
                                     >
                                         ×
                                     </button>
-                                </td>
+                                </td> */}
                             </tr>
                         ))}
                     </tbody>

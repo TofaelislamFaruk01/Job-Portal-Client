@@ -25,13 +25,24 @@ const Navbar = () => {
     const links = <>
     <li><NavLink to={"/"}>Home</NavLink></li>
     <li><NavLink to={"/myApplications"}>My Applications</NavLink></li>
-    <li><NavLink to={"/"}>Home</NavLink></li>
+    
       
-      <li><a>Item 3</a></li>
+      <li><a>
+      {
+      user ? < >
+
+      
+
+      <button  onClick={handleSignOut}>Sign Out</button>
+      
+      </> : <></>
+    }
+        
+        </a></li>
     
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-400  shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,13 +55,16 @@ const Navbar = () => {
       </ul>
     </div>
     
-    <a className="btn btn-ghost  text-xl">
-    <img className='w-12' src={jobsLogo} alt="" srcset="" />
-    <h3 className='text-3xl'>Job Portal</h3>
-      </a>
+    <Link to={'/'} className="btn btn-ghost text-xl hover:bg-transparent hover:text-inherit hover:border-none hover:shadow-none focus:outline-none active:bg-transparent shadow-none transform-none transition-none">
+  <img className="w-8 sm:w-12" src={jobsLogo} alt="" />
+  <h3 className="text-md sm:text-3xl">Job Portal</h3>
+</Link>
+
+
+
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal items-center px-1">
         {links}
       
     </ul>
@@ -63,12 +77,13 @@ const Navbar = () => {
 
       <p>{user.email}</p>
 
-      <button className='btn ml-2' onClick={handleSignOut}>Sign Out</button>
+      
       
       </> : <>
       <Link to={"/signIn"}> <button className='btn mr-2'>Sign in</button></Link>
-      <Link to={"/register"} className='btn'> <button>
-      Register</button></Link>
+     
+
+      
 
       </>
     }
