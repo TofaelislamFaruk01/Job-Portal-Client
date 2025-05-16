@@ -7,13 +7,13 @@ const MyApplications = () => {
 
     useEffect(() => {
         if (!user?.email) return;
-        fetch(`http://localhost:3000/job-applications?email=${user.email}`)
+        fetch(`https://job-portal-server-m68dgs4l6-tofael-islams-projects.vercel.app/job-applications?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data));
     }, [user?.email]);
 
     // const handleDelete = (id) => {
-    //     fetch(`http://localhost:3000/job-applications/${id}`, {
+    //     fetch(`https://job-portal-server-m68dgs4l6-tofael-islams-projects.vercel.app/job-applications/${id}`, {
     //         method: 'DELETE',
     //     })
     //         .then(res => {
