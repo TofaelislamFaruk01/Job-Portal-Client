@@ -29,7 +29,7 @@ const JobApply = () => {
             resume
         }
 
-        fetch('https://job-portal-server-m68dgs4l6-tofael-islams-projects.vercel.app/job-applications',{
+        fetch('https://job-portal-server-rho-snowy.vercel.app/job-applications',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'

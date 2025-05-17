@@ -7,7 +7,7 @@ const MyApplications = () => {
 
     useEffect(() => {
         if (!user?.email) return;
-        fetch(`https://job-portal-server-m68dgs4l6-tofael-islams-projects.vercel.app/job-applications?email=${user.email}`)
+        fetch(`https://job-portal-server-rho-snowy.vercel.app/job-applications?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data));
     }, [user?.email]);

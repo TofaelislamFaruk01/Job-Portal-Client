@@ -22,7 +22,7 @@ import MyApplications from "../pages/MyApplications/MyApplications";
       {
         path:'/jobs/:id',
         element: <PrivateRoute><JobDetails/></PrivateRoute>,
-        loader: ({params})=>fetch(`https://job-portal-server-m68dgs4l6-tofael-islams-projects.vercel.app/jobs/${params.id}`)
+        loader: ({params})=>fetch(`https://job-portal-server-rho-snowy.vercel.app/jobs/${params.id}`)
       },
       {
         path:'/jobApply/:id',
