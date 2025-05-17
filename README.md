@@ -1,12 +1,96 @@
-# React + Vite
+# 💼 Job Portal Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** for the Job Portal application, built with **React**, **Tailwind CSS**, and **Firebase Authentication**. It communicates with the backend server hosted on Vercel and provides users a platform to browse, view, and apply for jobs.
 
-Currently, two official plugins are available:
+> 🌐 Live Website: [https://job-portal-70de2.web.app](https://job-portal-70de2.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 🔗 Backend Server: [https://job-portal-server-o7lqgtwhw-tofael-islams-projects.vercel.app](https://job-portal-server-o7lqgtwhw-tofael-islams-projects.vercel.app)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- Browse all available jobs
+- View detailed job descriptions
+- Apply for jobs (with Firebase user authentication)
+- View user's applied jobs
+- Animations using **Lottie**
+- Responsive UI with **Tailwind CSS** & **DaisyUI**
+- SweetAlert2 for elegant alerts
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- **React** 19
+- **React Router DOM** 7
+- **Tailwind CSS** 4
+- **DaisyUI** 5
+- **Lottie React** (animations)
+- **Firebase Auth**
+- **SweetAlert2**
+- **LocalForage** (for optional local storage)
+- **Motion** (framer-motion based animations)
+
+### Build Tools
+
+- **Vite**
+- **ESLint**
+
+---
+
+
+---
+
+## 🔐 Firebase Auth
+
+This project uses Firebase for user login. Ensure you've set up:
+
+- Firebase project
+- Email/password authentication enabled
+- Web app credentials added
+
+You’ll need a `.env` file with Firebase config:
+
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+
+---
+
+## 🔗 Server Connection
+
+The frontend communicates with the backend:
+
+https://job-portal-server-o7lqgtwhw-tofael-islams-projects.vercel.app
+
+
+You’ll find routes like:
+
+- `/jobs` → get all jobs
+- `/jobs/:id` → job details
+- `/job-applications` → get/post applications
+
+---
+
+## 🧪 Local Development
+
+### Prerequisites
+
+- Node.js 18+
+- Firebase CLI (optional)
+
+### Run Locally
+
+```bash
+git clone https://github.com/your-username/job-portal-client.git
+cd job-portal-client
+npm install
+npm run dev
+
+
